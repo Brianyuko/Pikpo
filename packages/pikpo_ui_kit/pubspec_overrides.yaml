@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: pikpo_assets
+dependency_overrides:
+  pikpo_assets:
+    path: ../pikpo_assets

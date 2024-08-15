@@ -1,0 +1,15 @@
+#ignore for npm related
+node_modules/
+npm-debug.log*
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Flutter/Dart/Pub related
+.dart_tool/
+
+# Flutter test coverage
+coverage/
