@@ -1,0 +1,7 @@
+name: pikpo_workspace
+
+environment:
+  sdk: ">=3.4.1 <4.0.0"
+
+dev_dependencies:
+  melos: ^6.1.0

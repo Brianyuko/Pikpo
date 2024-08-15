@@ -139,6 +139,20 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  pikpo_assets:
+    dependency: "direct main"
+    description:
+      path: "../../packages/pikpo_assets"
+      relative: true
+    source: path
+    version: "0.0.1"
+  pikpo_ui_kit:
+    dependency: "direct main"
+    description:
+      path: "../../packages/pikpo_ui_kit"
+      relative: true
+    source: path
+    version: "0.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
