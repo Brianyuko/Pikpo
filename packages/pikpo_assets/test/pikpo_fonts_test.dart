@@ -88,5 +88,17 @@ void main() {
       expect(modifiedTextStyle.color, PikpoColors.k000000);
       expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
     });
+
+    test('fs11 should have fontSize 11 and same font family', () {
+      final modifiedTextStyle = textStyle.fs11;
+      expect(modifiedTextStyle.fontSize, 11);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
+    test('fs12 should have fontSize 12 and same font family', () {
+      final modifiedTextStyle = textStyle.fs12;
+      expect(modifiedTextStyle.fontSize, 12);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
   });
 }

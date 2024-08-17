@@ -11,6 +11,9 @@ extension PikpoFontExtension on TextStyle {
   TextStyle get extraLight => copyWith(fontWeight: FontWeight.w200);
   TextStyle get thin => copyWith(fontWeight: FontWeight.w100);
 
+  TextStyle get fs11 => copyWith(fontSize: 11);
+  TextStyle get fs12 => copyWith(fontSize: 12);
+
   TextStyle get kFFFFFF => copyWith(color: PikpoColors.kFFFFFF);
   TextStyle get k000000 => copyWith(color: PikpoColors.k000000);
 }
