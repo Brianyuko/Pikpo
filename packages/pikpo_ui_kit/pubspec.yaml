@@ -10,6 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
   pikpo_assets: ^0.0.1
+  auto_size_text: ^3.0.0
+  cached_network_image: ^3.4.1
+  flutter_cache_manager: ^3.4.1
+  flutter_svg: ^2.0.10+1
+  mocktail: ^1.0.4
+  mocktail_image_network: ^1.2.0
 
 dev_dependencies:
   flutter_test:
