@@ -9,16 +9,24 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:pikpo_widgetbook/top_navigation_title_wbw.dart' as _i2;
-import 'package:pikpo_widgetbook/top_navigation_wbw.dart' as _i3;
+import 'package:pikpo_widgetbook/bottom_sheet_base_wbw.dart' as _i2;
+import 'package:pikpo_widgetbook/top_navigation_title_wbw.dart' as _i3;
+import 'package:pikpo_widgetbook/top_navigation_wbw.dart' as _i4;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookLeafComponent(
+    name: 'BottomSheetBaseWidget',
+    useCase: _i1.WidgetbookUseCase(
+      name: 'Bottom Sheet Base',
+      builder: _i2.bottomSheetBase,
+    ),
+  ),
+  _i1.WidgetbookLeafComponent(
     name: 'TopNavigationTitleWidget',
     useCase: _i1.WidgetbookUseCase(
       name: 'Title Only',
-      builder: _i2.titleOnly,
+      builder: _i3.titleOnly,
     ),
   ),
   _i1.WidgetbookComponent(
@@ -26,11 +34,11 @@ final directories = <_i1.WidgetbookNode>[
     useCases: [
       _i1.WidgetbookUseCase(
         name: 'Invalid URL Profile Image',
-        builder: _i3.invalidURLProfileImageUseCase,
+        builder: _i4.invalidURLProfileImageUseCase,
       ),
       _i1.WidgetbookUseCase(
         name: 'UI Kit',
-        builder: _i3.uiKitUseCase,
+        builder: _i4.uiKitUseCase,
       ),
     ],
   ),
