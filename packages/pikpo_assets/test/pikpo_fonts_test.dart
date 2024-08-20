@@ -82,6 +82,13 @@ void main() {
       expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
     });
 
+    test('k4A4A4A should have color PikpoColors.k4A4A4A and same font family',
+        () {
+      final modifiedTextStyle = textStyle.k4A4A4A;
+      expect(modifiedTextStyle.color, PikpoColors.k4A4A4A);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
     test('k000000 should have color PikpoColors.k000000 and same font family',
         () {
       final modifiedTextStyle = textStyle.k000000;
