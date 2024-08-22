@@ -15,4 +15,5 @@ class PikpoColors {
   static const Color k000000 = Color(0xFF000000);
   static const Color k0A0A0A = Color(0xFF0A0A0A);
   static const Color k4A4A4A = Color(0xFF4A4A4A);
+  static const Color kBDBDBD = Color(0xFFBDBDBD);
 }

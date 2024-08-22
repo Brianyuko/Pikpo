@@ -18,6 +18,7 @@ extension PikpoFontExtension on TextStyle {
   TextStyle get kFFFFFF => copyWith(color: PikpoColors.kFFFFFF);
   TextStyle get k4A4A4A => copyWith(color: PikpoColors.k4A4A4A);
   TextStyle get k000000 => copyWith(color: PikpoColors.k000000);
+  TextStyle get kBDDBDBD => copyWith(color: PikpoColors.kBDBDBD);
 }
 
 class PikpoFonts {
