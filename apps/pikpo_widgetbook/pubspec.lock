@@ -570,6 +570,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  pikpo_core:
+    dependency: "direct main"
+    description:
+      path: "../../packages/pikpo_core"
+      relative: true
+    source: path
+    version: "0.0.1"
   pikpo_ui_kit:
     dependency: "direct main"
     description:
