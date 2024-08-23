@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pikpo_app/presentation/blocs/role/role_bloc.dart';
+import 'package:pikpo_app/presentation/blocs/user/user_bloc.dart';
 import 'package:pikpo_assets/pikpo_colors.dart';
 import 'package:pikpo_assets/pikpo_fonts.dart';
 import 'package:pikpo_ui_kit/bottom_sheet_base_widget.dart';
@@ -19,8 +19,8 @@ class _MainPageState extends State<MainPage> {
   void initState() {
     super.initState();
     Future.microtask(
-      () => context.read<RoleBloc>().add(
-            FetchRoles(),
+      () => context.read<UserBloc>().add(
+            FetchUserByIdRecord(userIdRecord: 'recdpguPkKNgOTmDn'),
           ),
     );
   }
@@ -30,26 +30,26 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: PikpoColors.kFFFFFF,
       body: SafeArea(
-        child: BlocBuilder<RoleBloc, RoleState>(
+        child: BlocBuilder<UserBloc, UserState>(
           builder: (context, state) {
             return switch (state) {
-              RoleLoading() ||
-              RoleInitial() =>
+              UserLoading() ||
+              UserInitial() =>
                 const Center(child: CircularProgressIndicator.adaptive()),
-              RoleError() => Center(
+              UserError() => Center(
                   child: Text(
                     'Error: ${state.failureMessage}',
                     style: PikpoFonts.defaultTextStyle.bold.fs14,
                   ),
                 ),
-              RoleLoaded() => Column(
+              UserLoaded() => Column(
                   children: [
-                    const TopNavigationWidget(
-                        imageUrl:
-                            'https://images.unsplash.com/photo-1518609571773-39b7d303a87b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                        name: 'Sarah',
-                        username: '@sarah.sports',
-                        jobTitle: 'Personal Trainer'),
+                    TopNavigationWidget(
+                      imageUrl: state.user.imageProfile,
+                      name: state.user.name,
+                      username: "@${state.user.username}",
+                      jobTitle: state.user.currentTitle,
+                    ),
                     const Spacer(),
                     BottomSheetBaseWidget(
                       child: Padding(
