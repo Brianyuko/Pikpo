@@ -55,7 +55,7 @@ class TopNavigationWidget extends StatelessWidget {
                 Icons.error_outline_rounded,
                 color: Colors.redAccent,
               ),
-              fit: BoxFit.fitHeight,
+              fit: BoxFit.cover,
               height: 48,
               width: 48,
             ),

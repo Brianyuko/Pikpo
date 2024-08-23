@@ -96,6 +96,39 @@ void main() {
       expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
     });
 
+    test('kF8F8F8 should have color PikpoColors.kF8F8F8 and same font family',
+        () {
+      final modifiedTextStyle = textStyle.kF8F8F8;
+      expect(modifiedTextStyle.color, PikpoColors.kF8F8F8);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
+    test('k0A0A0A should have color PikpoColors.k0A0A0A and same font family',
+        () {
+      final modifiedTextStyle = textStyle.k0A0A0A;
+      expect(modifiedTextStyle.color, PikpoColors.k0A0A0A);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
+    test('kBDDBDBD should have color PikpoColors.kBDDBDBD and same font family',
+        () {
+      final modifiedTextStyle = textStyle.kBDDBDBD;
+      expect(modifiedTextStyle.color, PikpoColors.kBDBDBD);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
+    test('fs9 should have fontSize 9 and same font family', () {
+      final modifiedTextStyle = textStyle.fs9;
+      expect(modifiedTextStyle.fontSize, 9);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
+    test('fs10 should have fontSize 10 and same font family', () {
+      final modifiedTextStyle = textStyle.fs10;
+      expect(modifiedTextStyle.fontSize, 10);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
     test('fs11 should have fontSize 11 and same font family', () {
       final modifiedTextStyle = textStyle.fs11;
       expect(modifiedTextStyle.fontSize, 11);
@@ -107,9 +140,16 @@ void main() {
       expect(modifiedTextStyle.fontSize, 12);
       expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
     });
+
     test('fs14 should have fontSize 14 and same font family', () {
       final modifiedTextStyle = textStyle.fs14;
       expect(modifiedTextStyle.fontSize, 14);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
+    test('fs16 should have fontSize 16 and same font family', () {
+      final modifiedTextStyle = textStyle.fs16;
+      expect(modifiedTextStyle.fontSize, 16);
       expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
     });
   });
