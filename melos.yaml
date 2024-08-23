@@ -5,24 +5,20 @@ packages:
   - packages/**
 
 scripts:
-  dev_app:
-    run: melos exec --scope=pikpo_app -- flutter run
-    description: Run debug mode the main entry-point for the `pikpo_app` app.
-  dev_widget:
-    run: melos exec --scope=pikpo_widgetbook -- flutter run
-    description: Run debug mode the main entry-point for the `pikpo_widgetbook` app.
-  profile_app:
-    run: melos exec --scope=pikpo_app -- flutter run --profile
-    description: Run profile mode the main entry-point for the `pikpo_app` app.
-  profile_widget:
-    run: melos exec --scope=pikpo_widgetbook -- flutter run --profile
-    description: Run profile mode the main entry-point for the `pikpo_widgetbook` app.
-  release_app:
-    run: melos exec --scope=pikpo_app -- flutter run --release
-    description: Run release mode the main entry-point for the `pikpo_app` app.
-  release_widget:
-    run: melos exec --scope=pikpo_widgetbook -- flutter run --release
-    description: Run release mode the main entry-point for the `pikpo_widgetbook` app.
+  app:
+    run: |
+      DEVICE=$(flutter devices | awk -F ' • ' '{print $1 " • " $2}' | fzf --prompt="Select a device: ") &&
+      DEVICE_ID=$(echo $DEVICE | awk -F ' • ' '{print $2}') &&
+      MODE=$(echo "debug\nrelease\nprofile" | fzf --prompt="Select a mode: ") &&
+      melos exec --scope=pikpo_app -- flutter run --$MODE -d $DEVICE_ID
+    description: Run the main entry-point for the `pikpo_app` app with selected device and mode.
+  widgetbook:
+    run: |
+      DEVICE=$(flutter devices | awk -F ' • ' '{print $1 " • " $2}' | fzf --prompt="Select a device: ") &&
+      DEVICE_ID=$(echo $DEVICE | awk -F ' • ' '{print $2}') &&
+      MODE=$(echo "debug\nrelease\nprofile" | fzf --prompt="Select a mode: ") &&
+      melos exec --scope=pikpo_widgetbook -- flutter run --$MODE -d $DEVICE_ID
+    description: Run the main entry-point for the `pikpo_widgetbook` app with selected device and mode.
   format:
     run: melos exec dart format . --fix
     description: Run `dart format` for all packages.
