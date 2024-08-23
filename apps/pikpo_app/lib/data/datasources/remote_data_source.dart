@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:pikpo_app/data/models/base/base_model.dart';
+import 'package:pikpo_app/data/models/event_model.dart';
 import 'package:pikpo_app/data/models/role_model.dart';
 import 'package:pikpo_app/data/models/user_model.dart';
 import 'package:pikpo_app/env/env.dart';
@@ -15,6 +16,9 @@ abstract class RemoteDataSource {
   Future<BaseModel<UserModel>> fetchUserByIdRecord({
     required String idRecord,
   });
+  Future<List<BaseModel<EventModel>>> fetchEventsByIdUser({
+    required int idUser,
+  });
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -22,6 +26,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       'https://api.airtable.com/v0/appx0QWI0Nhu9u6Ai';
   static const String endpointRoles = '/tblxhGE9aXHBnzSk1';
   static const String endpointUsers = '/tblbAJUFYgE6ZclS7';
+  static const String endpointEvents = '/tbly2KsDhR4B08pIf';
 
   final http.Client client;
 
@@ -102,6 +107,36 @@ class RemoteDataSourceImpl implements RemoteDataSource {
           (json) => UserModel.fromJson(json as Map<String, dynamic>),
         );
         return user;
+      }
+    } else {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<List<BaseModel<EventModel>>> fetchEventsByIdUser({
+    required int idUser,
+  }) async {
+    final response = await client.get(
+      Uri.parse(
+          '$_baseUrl$endpointEvents?filterByFormula=FIND($idUser, {user})'),
+      headers: {
+        'Authorization': 'Bearer ${Env.apiKey}',
+      },
+    );
+    if (response.statusCode == 200) {
+      Map<String, dynamic>? result = json.decode(response.body);
+      List<dynamic>? records = result?['records'];
+      if (records == null) {
+        throw ServerException();
+      } else {
+        List<BaseModel<EventModel>> events = records
+            .map((record) => BaseModel<EventModel>.fromJson(
+                  record,
+                  (json) => EventModel.fromJson(json as Map<String, dynamic>),
+                ))
+            .toList();
+        return events;
       }
     } else {
       throw ServerException();

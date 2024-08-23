@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:pikpo_app/data/datasources/remote_data_source.dart';
+import 'package:pikpo_core/domain/entities/event_entity.dart';
 import 'package:pikpo_core/domain/entities/role_entity.dart';
 import 'package:pikpo_core/domain/entities/user_entity.dart';
 import 'package:pikpo_core/domain/repository/repository.dart';
@@ -49,6 +50,28 @@ class RepositoryImpl implements Repository {
           idRecord: result.id,
           roleName: resultRole.fields.name,
         ),
+      );
+    } on ServerException {
+      return const Left(ServerFailure('Server Error'));
+    } on SocketException {
+      return const Left(ServerFailure('No Internet Connection'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<EventEntity>>> getEventsByIdUser({
+    required int idUser,
+  }) async {
+    try {
+      final result = await remoteDataSource.fetchEventsByIdUser(
+        idUser: idUser,
+      );
+      return Right(
+        result
+            .map(
+              (e) => e.fields.toEntity(idRecord: e.id),
+            )
+            .toList(),
       );
     } on ServerException {
       return const Left(ServerFailure('Server Error'));

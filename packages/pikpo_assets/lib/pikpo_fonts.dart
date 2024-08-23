@@ -17,6 +17,7 @@ extension PikpoFontExtension on TextStyle {
   TextStyle get fs11 => copyWith(fontSize: 11);
   TextStyle get fs12 => copyWith(fontSize: 12);
   TextStyle get fs14 => copyWith(fontSize: 14);
+  TextStyle get fs16 => copyWith(fontSize: 16);
 
   TextStyle get kFFFFFF => copyWith(color: PikpoColors.kFFFFFF);
   TextStyle get kF8F8F8 => copyWith(color: PikpoColors.kF8F8F8);

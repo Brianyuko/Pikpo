@@ -140,9 +140,16 @@ void main() {
       expect(modifiedTextStyle.fontSize, 12);
       expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
     });
+
     test('fs14 should have fontSize 14 and same font family', () {
       final modifiedTextStyle = textStyle.fs14;
       expect(modifiedTextStyle.fontSize, 14);
+      expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
+    });
+
+    test('fs16 should have fontSize 16 and same font family', () {
+      final modifiedTextStyle = textStyle.fs16;
+      expect(modifiedTextStyle.fontSize, 16);
       expect(modifiedTextStyle.fontFamily, textStyle.fontFamily);
     });
   });
