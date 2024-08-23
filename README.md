@@ -6,12 +6,19 @@ This repository contains my submission for the Pikpo Front-End Engineer Coding T
 
 The goal of this project is to demonstrate my skills in front-end development using Flutter, including writing clean, maintainable code and implementing user interfaces. The project is structured as a monorepo managed by Melos.
 
+## Docs & API Reference
+Pikpo Flow & ERD Diagram: [Docs](https://app.eraser.io/workspace/6AsM33SrP5HfA42DOdB1?origin=share)
+API Docs: [Pikpo Airtable](https://airtable.com/appx0QWI0Nhu9u6Ai/api/docs)
+
 ## Technologies Used
 
 - **Framework**: Flutter
+- **Architecture**: Clean Architecture
+- **State Management**: Bloc
 - **Monorepo Management**: Melos
 - **Commit Message Convention**: npm with commitlint and husky
 - **Testing**: very_good_cli with coverage enforcement
+- **Integration Testing**: *Work in Progress*
 
 ## Setup Instructions
 
