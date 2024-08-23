@@ -16,7 +16,7 @@ final class RoleLoading extends RoleState {
 final class RoleLoaded extends RoleState {
   final List<RoleEntity> roles;
 
-  RoleLoaded(this.roles);
+  RoleLoaded({required this.roles});
 
   @override
   List<Object?> get props => [roles];

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pikpo_app/presentation/blocs/bloc/role_bloc.dart';
+import 'package:pikpo_app/presentation/blocs/role/role_bloc.dart';
 import 'package:pikpo_app/routes/routes.dart';
 import 'package:pikpo_app/injection.dart' as di;
 

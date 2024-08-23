@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pikpo_app/presentation/blocs/bloc/role_bloc.dart';
+import 'package:pikpo_app/presentation/blocs/role/role_bloc.dart';
 import 'package:pikpo_assets/pikpo_colors.dart';
 import 'package:pikpo_assets/pikpo_fonts.dart';
 import 'package:pikpo_ui_kit/bottom_sheet_base_widget.dart';

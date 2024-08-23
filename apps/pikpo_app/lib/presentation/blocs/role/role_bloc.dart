@@ -17,7 +17,7 @@ class RoleBloc extends Bloc<RoleEvent, RoleState> {
       final result = await getRoles.execute();
       result.fold(
         (failure) => emit(RoleError(failureMessage: failure.message)),
-        (roles) => emit(RoleLoaded(roles)),
+        (roles) => emit(RoleLoaded(roles: roles)),
       );
     });
   }
