@@ -23,11 +23,11 @@ class RoleModel extends Equatable {
   List<Object?> get props => [name];
 
   RoleEntity toEntity({
-    required String idFields,
+    required String idRecord,
   }) =>
       RoleEntity(
+        idRecord: idRecord,
         id: id,
         name: name,
-        idFields: idFields,
       );
 }

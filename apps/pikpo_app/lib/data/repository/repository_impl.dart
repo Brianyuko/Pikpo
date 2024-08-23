@@ -21,7 +21,7 @@ class RepositoryImpl implements Repository {
       return Right(
         result
             .map(
-              (e) => e.fields.toEntity(idFields: e.id),
+              (e) => e.fields.toEntity(idRecord: e.id),
             )
             .toList(),
       );
